@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css'>
+    <link rel="stylesheet" href="css/estilo2.css">
+    <title>Entrar</title>
+</head>
+
+<body data-spy="scroll" data-target="#menu">
+
+    <div class="modal fade" id="myModalEmail">
+        
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form>
+                <h1>Informe o Email</h1>
+
+                <br>
+                <input type="email" placeholder="Email" required/><br>
+                <button type="submit" data-toggle="modal"data-target="#myModalEmail" class="btn btn-primary">Confirmar</button>
+                <a href="index.html">
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </a>
+
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Entrar</h1>
+                <br>
+                <input type="email" placeholder="Email" required/>
+                <input type="password" placeholder="Senha" required/>
+                <br>
+                <button type="submit" class="btn btn-primary">Confirmar</button>
+                <a href="index.html">
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </a>
+
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Recupere sua senha!</h1>
+                    <p> Para recuperar a sua senha, informe o seu email!</p>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Esqueceu a senha?</h1>
+                    <br>
+                    <button class="ghost" id="signUp">Recuperar sua senha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main2.js"></script>
+</body>
+
+</html>

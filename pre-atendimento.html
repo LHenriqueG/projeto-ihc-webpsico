@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebPsico - Pré-Atendimento</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
+
+    <!--
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
+    -->
+
+
+
+
+
+
+
+</head>
+
+<body data-spy="scroll" data-target="#menu">
+
+
+
+    <!-- Start Home Section -->
+    <div id="pre-atendimento">
+
+        <!-- Navigation -->
+
+        <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="imagens/Logo.png"></a>
+                <a class="navbar-brand corNomeSite" href="index.html">
+                    <h3>WebPsico</h3>
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pre-atendimento">Pré-Atendimento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Quem somos?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#noticias">Saiba mais!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="entrar.html">Entrar</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+
+        </nav> <!-- End Navigation -->
+    </div> <!-- End Home Section -->
+
+    <div class="jumbotron">
+
+
+        <form>
+            <div class="row" style="padding-top: 35px;">
+                <div class="col-sm-6">
+                    <strong> <label for="nome">* Nome Completo:</label> </strong>
+                    <input type="text" id="nome" class="form-control" placeholder="Ex: Angelica Felix de Sousa">
+                </div>
+
+                <div class="col-sm-4">
+                    <strong> <label for="email">* Email:</label> </strong>
+                    <input type="email" id="email" class="form-control" placeholder="Ex: angelica@gmail.com">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10">
+                    <strong> <label for="ende">* Endereço Completo:</label></strong>
+                    <input type="text" id="endereco" class="form-control"
+                        placeholder="Ex: Alfredo Lustosa Cabral, S/N ">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong> <label for="rg">RG:</label> </strong>
+                    <input type="text" id="rg" class="form-control rg" placeholder="Ex: 12345-7">
+                </div>
+
+                <div class="col-sm-2">
+                    <strong> <label for="cpf">* CPF:</label> </strong>
+                    <input type="text" id="CPF" class="form-control cpf" placeholder="Ex: 111.222.333-44">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong> <label for="dn">* Data de Nascimento:</label> </strong>
+                    <input onchange="openForm();" id="data" type="date" class="form-control input"
+                        placeholder="Data de Nascimento">
+                </div>
+
+                <!-- A ideia é a seguinte, quando o usuário digitar uma idade, caso seja menor de idade, 
+                        aparecer os campos do responsável para preencher tbm, caso não for de menor, continua
+                        da mesma forma, os campos do responsável oculto.
+                        Sendo assim, coloque aqui todos os campos do responsável e tente deixar uniformes, organizados e tals.-->
+
+                <div class="col-sm-2">
+                    <strong> <label for="natu">* Naturalidade:</label> </strong>
+                    <input type="text" id="naturalidade" class="form-control" placeholder="Ex: Brasileiro">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong> <label for="tel1">* Telefone 1:</label> </strong>
+                    <input type="text" id="telefone1" class="form-control phone-mask" placeholder="(83)98822-3344">
+                </div>
+
+                <div class="col-sm-2">
+                    <strong> <label for="tel2">Telefone 2:</label> </strong>
+                    <input type="text" id="telefone" class="form-control phone-mask" placeholder="(83)98822-3344">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong> <label for="disp">Disponibilidade: Dia</label> </strong>
+                </div>
+            </div>
+
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks1" id="segunda" value="segunda">
+                <label class="form-check-label" for="segunda">
+                    Segunda
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks2" id="terca" value="terca">
+                <label class="form-check-label" for="terca">
+                    Terça
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks3" id="quarta" value="quarta">
+                <label class="form-check-label" for="quarta">
+                    Quarta
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks4" id="quinta" value="quinta">
+                <label class="form-check-label" for="quinta">
+                    Quinta
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks5" id="sexta" value="sexta">
+                <label class="form-check-label" for="sexta">
+                    Sexta
+                </label>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <strong> <label for="turno">Turno:</label> </strong>
+                </div>
+            </div>
+
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks6" id="manha" value="manha">
+                <label class="form-check-label" for="manha">
+                    Manhã
+                </label>
+            </div>
+
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks7" id="tarde" value="tarde">
+                <label class="form-check-label" for="tarde">
+                    Tarde
+                </label>
+            </div>
+
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" name="exampleChecks8" id="noite" value="noite">
+                <label class="form-check-label" for="noite">
+                    Noite
+                </label>
+            </div>
+            <center>
+                <a class="btn btn-danger" href="index.html">Cancelar</a>
+                <button onclick=" return validarPreAtendimento();" type="button" class="btn btn-success"
+                    href="index.html">Finalizar</button>
+            </center>
+
+            <div class="modal fade" id="myModalResponsavel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Dados do Responsável Cadastrado com Sucesso!</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Seus dados foram enviados com sucesso!
+                            Aguarde o contato da nossa equipe confirmando o dia e a hora para a realização da sua
+                            triagem.
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" href="index.html">Fechar</button> -->
+                            <a class="btn btn-danger" href="index.html">Fechar</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Erros! -->
+            <div class="modal" tabindex="-1" role="dialog" id="modalErro">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Erro!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Preencha os campos corretamente!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Erros! -->
+            <div class="modal" tabindex="-1" role="dialog" id="modalErroResponsavel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Erro!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Preencha os campos corretamente do Responsável!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick=" return MostrarModalResponsavelNovamente();"
+                                class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Enviado com sucesso! -->
+            <div class="modal" tabindex="-1" role="dialog" id="modalSucesso">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Dados enviados com sucesso!!</h5>
+                            <button type="submit" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Seus dados foram enviados com sucesso!
+                            Aguarde o contato da nossa equipe confirmando o dia e a hora para a realização da sua
+                            triagem.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" href="index.html"
+                                data-dismiss="modal">Fechar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Modal smaller age -->
+            <!-- Essa parte aqui você só pega os dados, pode comentar! -->
+            <div class="modal fade" id="menor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Dados do Responsável</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form>
+
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Nome Completo:</label>
+                                    <input type="text" class="form-control" id="nomeResponsavel"
+                                        placeholder="Ex: Angélica Felix de Medeiros" required>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">RG:</label>
+                                    <input type="text" class="form-control rg" id="rg" placeholder="Ex: 123.456-5"
+                                        required>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">CPF:</label>
+                                    <input type="text" class="form-control cpf" id="enderecoResponsavel"
+                                        placeholder="Ex: 111.222.333-44" required>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Telefone:</label>
+                                    <input type="text" class="form-control phone-mask" id="CPFResponsavel"
+                                        placeholder="(83)98877-6655" required>
+                                </div>
+
+                                <div>
+                                    <label for="sel1">Parentesco:</label>
+                                    <select class="form-control" id="sel1" required>
+                                        <option>Mãe</option>
+                                        <option>Pai</option>
+                                        <option>Avó</option>
+                                        <option>Avô</option>
+                                        <option>Madrasta</option>
+                                        <option>Padrasto</option>
+                                        <option>Outros</option>
+                                    </select>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                            <a class="btn btn-success" onclick=" return validarModalResponsavel();"
+                                data-dismiss="modal">Enviar</a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+        <script>
+            $('.cpf').mask('000.000.000-00', { reverse: true });
+            $('.rg').mask('9.999.999');
+
+        </script>
+        <script>
+            $('.phone-mask').each(function (i, el) {
+                $('#' + el.id).mask("(00) 00000-0000");
+            })
+            function updateMask(event) {
+                var $element = $('#' + this.id);
+                $(this).off('blur');
+                $element.unmask();
+                if (this.value.replace(/\D/g, '').length > 10) {
+                    $element.mask("(00) 00000-0000");
+                } else {
+                    $element.mask("(00) 0000-00009");
+                }
+                $(this).on('blur', updateMask);
+            }
+            $('.phone-mask').on('blur', updateMask);
+        </script>
+    </div>
+    <!--End Jumbotron Section -->
+
+
+    <!-- SCRIPT DO MENU 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+
+<!-- Scripts e arquivos jquery-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+</html>
